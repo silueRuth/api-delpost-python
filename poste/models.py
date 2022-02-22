@@ -11,9 +11,9 @@ from django.db import models
 class Contrats(models.Model):
     id = models.BigAutoField(primary_key=True)
     detail_contrat = models.TextField()
-    status = models.IntegerField()
     employe_id = models.PositiveBigIntegerField()
     post_id = models.PositiveBigIntegerField()
+    active = models.IntegerField()
     created_at = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(blank=True, null=True)
 
@@ -87,6 +87,7 @@ class PersonalAccessTokens(models.Model):
 class Postes(models.Model):
     id = models.BigAutoField(primary_key=True)
     post = models.CharField(max_length=100, blank=True, null=True)
+    etat = models.IntegerField()
     created_at = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(blank=True, null=True)
 
