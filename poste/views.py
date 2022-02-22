@@ -1,6 +1,4 @@
-import imp
 from django.shortcuts import render
-from django.core.files.storage import FileSystemStorage
 # Create your views here.
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -27,7 +25,6 @@ def delete_post(request,id):
             s=Postes.objects.get(id=id)
             s.delete()
             return Response({'status':True , 'msg':'Ce post a été supprimé avec succès....'})
-
 
         else:
             return Response({'status':True , 'msg':'Ce post n\'existe pas....'})
